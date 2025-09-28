@@ -47,9 +47,9 @@ offset_bottom = 28.0
 scale = Vector2(0.5687378, 1)
 theme_override_fonts/font = ExtResource("2_hgi55")
 theme_override_font_sizes/font_size = 16
-text = "Click!"
 
 [node name="Timer" type="Timer" parent="."]
+one_shot = true
 
 [node name="MarginContainer3" type="MarginContainer" parent="."]
 layout_mode = 0
@@ -61,6 +61,80 @@ scale = Vector2(28.719997, 16.160004)
 visible = false
 layout_mode = 2
 
+[node name="MarginContainer4" type="MarginContainer" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 137.0
+offset_top = 90.0
+offset_right = 177.0
+offset_bottom = 130.0
+scale = Vector2(21.676682, 11.245566)
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer4"]
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Seconds" type="MarginContainer" parent="MarginContainer4/ColorRect"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -34.1873
+offset_top = -15.109184
+offset_right = 5.8126984
+offset_bottom = 24.890816
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(0.42795676, 0.7225573)
+
+[node name="label" type="Label" parent="MarginContainer4/ColorRect/Seconds"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("2_hgi55")
+text = "00:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="mSeconds" type="MarginContainer" parent="MarginContainer4/ColorRect"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -21.039532
+offset_top = -14.664564
+offset_right = 18.960468
+offset_bottom = 25.335434
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(0.42795676, 0.7225573)
+
+[node name="label" type="Label" parent="MarginContainer4/ColorRect/mSeconds"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("2_hgi55")
+text = "00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer4/ColorRect"]
+layout_mode = 0
+offset_left = 36.306297
+offset_top = 0.17784786
+offset_right = 76.3063
+offset_bottom = 40.17785
+scale = Vector2(0.09026671, 0.18189985)
+
+[node name="Button" type="Button" parent="MarginContainer4/ColorRect/MarginContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_hgi55")
+text = "X"
+icon_alignment = 1
+
 [connection signal="pressed" from="BackButton/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="MarginContainer3/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="MarginContainer4/ColorRect/MarginContainer/Button" to="." method="_on_exitbutton_pressed"]

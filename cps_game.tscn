@@ -14,24 +14,6 @@ grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("1_e33mb")
 
-[node name="Otsikko" type="MarginContainer" parent="."]
-layout_mode = 0
-offset_left = 81.00001
-offset_top = 5.9999995
-offset_right = 320.0
-offset_bottom = 46.0
-scale = Vector2(4.332186, 2.5836525)
-mouse_filter = 2
-
-[node name="Label" type="Label" parent="Otsikko"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 0
-theme_override_fonts/font = ExtResource("1_4gf6h")
-theme_override_font_sizes/font_size = 18
-text = "You have 5 seconds to click
- as muchas you can"
-
 [node name="Thing" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
@@ -119,10 +101,10 @@ vertical_alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="WindoW/Window"]
 layout_mode = 0
-offset_left = 225.85127
-offset_top = 0.23081902
-offset_right = 345.85126
-offset_bottom = 136.23082
+offset_left = 222.435
+offset_top = 0.5848475
+offset_right = 342.435
+offset_bottom = 136.58485
 scale = Vector2(0.19819838, 0.033714764)
 
 [node name="Button" type="Button" parent="WindoW/Window/MarginContainer"]
@@ -191,23 +173,11 @@ offset_bottom = -184.99997
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(23.279999, 11.960002)
+mouse_filter = 0
 
 [node name="ColorRect" type="ColorRect" parent="MarginContainer"]
 layout_mode = 2
-color = Color(0.15127608, 0.15127608, 0.15127608, 1)
-
-[node name="5" type="MarginContainer" parent="MarginContainer/ColorRect"]
-layout_mode = 0
-offset_left = 15.936426
-offset_top = 10.367889
-offset_right = 55.936424
-offset_bottom = 50.36789
-scale = Vector2(0.18415801, 0.5086429)
-
-[node name="5Button" type="Button" parent="MarginContainer/ColorRect/5"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("3_6ev7y")
-text = "5s"
+color = Color(0.74978, 0.74978, 0.74977994, 1)
 
 [node name="1" type="MarginContainer" parent="MarginContainer/ColorRect"]
 layout_mode = 0
@@ -219,45 +189,174 @@ scale = Vector2(0.18415801, 0.5086429)
 
 [node name="1Button" type="Button" parent="MarginContainer/ColorRect/1"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("3_6ev7y")
 text = "1s"
 
+[node name="5" type="MarginContainer" parent="MarginContainer/ColorRect"]
+layout_mode = 0
+offset_left = 16.237116
+offset_top = 10.367889
+offset_right = 56.237114
+offset_bottom = 50.36789
+scale = Vector2(0.18415801, 0.5086429)
+
+[node name="5Button" type="Button" parent="MarginContainer/ColorRect/5"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_6ev7y")
+text = "5s"
+
 [node name="10" type="MarginContainer" parent="MarginContainer/ColorRect"]
 layout_mode = 0
-offset_left = 27.878004
-offset_top = 10.284277
-offset_right = 77.878006
-offset_bottom = 50.28428
+offset_left = 29.295532
+offset_top = 10.367889
+offset_right = 69.29553
+offset_bottom = 50.36789
 scale = Vector2(0.18415801, 0.5086429)
 
 [node name="10Button" type="Button" parent="MarginContainer/ColorRect/10"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("3_6ev7y")
 text = "10s"
 
-[node name="Otsikko" type="MarginContainer" parent="MarginContainer/ColorRect"]
+[node name="Time" type="MarginContainer" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-scale = Vector2(0.16629231, 0.24123174)
+offset_left = 498.00003
+offset_top = 11.0
+offset_right = 737.0
+offset_bottom = 51.0
+scale = Vector2(0.6000006, 1.9200001)
 
-[node name="Label" type="Label" parent="MarginContainer/ColorRect/Otsikko"]
+[node name="ColorRect" type="ColorRect" parent="Time"]
 layout_mode = 2
-size_flags_horizontal = 4
+color = Color(0, 0.97, 0.080833256, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="Time/ColorRect"]
+layout_mode = 0
+offset_left = 31.666536
+offset_top = 0.52083397
+offset_right = 71.66654
+offset_bottom = 40.520836
+scale = Vector2(3.5999897, 0.73598975)
+
+[node name="Label" type="Label" parent="Time/ColorRect/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 1
 theme_override_fonts/font = ExtResource("3_6ev7y")
-text = "UNTO"
 horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="Time/ColorRect"]
+layout_mode = 0
+offset_left = 1.6666158
+offset_top = 15.104165
+offset_right = 113.66662
+offset_bottom = 55.104164
+scale = Vector2(2.1333365, 0.69881976)
+
+[node name="Label" type="Label" parent="Time/ColorRect/MarginContainer2"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("3_6ev7y")
+text = "Cps"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Cps3" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 719.0
+offset_top = 11.0
+offset_right = 958.0
+offset_bottom = 51.0
+scale = Vector2(0.6000006, 1.9200001)
+
+[node name="ColorRect" type="ColorRect" parent="Cps3"]
+layout_mode = 2
+color = Color(0.97, 0, 0.01616642, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="Cps3/ColorRect"]
+layout_mode = 0
+offset_left = 21.666649
+offset_right = 61.666653
+offset_bottom = 40.0
+scale = Vector2(4.4666634, 0.66625077)
+
+[node name="Label" type="Label" parent="Cps3/ColorRect/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("3_6ev7y")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="Cps3/ColorRect"]
+layout_mode = 0
+offset_left = -1.6666634
+offset_top = 17.1875
+offset_right = 110.333336
+offset_bottom = 57.1875
+scale = Vector2(2.1333365, 0.65715325)
+
+[node name="Label" type="Label" parent="Cps3/ColorRect/MarginContainer2"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("3_6ev7y")
+text = "Time left"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Clicks" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 282.0
+offset_top = 11.0
+offset_right = 521.0
+offset_bottom = 51.0
+scale = Vector2(0.6000006, 1.9200001)
+
+[node name="ColorRect" type="ColorRect" parent="Clicks"]
+layout_mode = 2
+color = Color(0, 0, 0.97, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="Clicks/ColorRect"]
+layout_mode = 0
+offset_left = 31.666637
+offset_top = 2.6041677
+offset_right = 71.66664
+offset_bottom = 42.604168
+scale = Vector2(4.4666634, 0.59015656)
+
+[node name="Label" type="Label" parent="Clicks/ColorRect/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("3_6ev7y")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="Clicks/ColorRect"]
+layout_mode = 0
+offset_left = 1.6666666
+offset_top = 17.708332
+offset_right = 113.666664
+offset_bottom = 57.708332
+scale = Vector2(2.1333365, 0.6154866)
+
+[node name="Label" type="Label" parent="Clicks/ColorRect/MarginContainer2"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("3_6ev7y")
+text = "Clicks"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="timeout" from="SmallTimer" to="." method="_on_small_timer_timeout"]
 [connection signal="pressed" from="WindoW/Window/MarginContainer/Button" to="." method="_on_buttona_pressed"]
 [connection signal="timeout" from="WindoW/Window/MarginContainer/VerySmallTimer" to="." method="_on_very_small_timer_timeout"]
-[connection signal="pressed" from="BackButton/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="BackButton/BackButton" to="." method="perkele"]
+[connection signal="pressed" from="BackButton/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="MarginContainer2/Button" to="." method="_on_button_pressed"]
 [connection signal="timeout" from="MarginContainer2/Timer" to="." method="_on_timer_timeout"]
 [connection signal="mouse_entered" from="MarginContainer/ColorRect" to="." method="_on_color_rect_mouse_entered"]
-[connection signal="pressed" from="MarginContainer/ColorRect/5/5Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="MarginContainer/ColorRect/5/5Button" to="." method="_on_5button_pressed"]
 [connection signal="pressed" from="MarginContainer/ColorRect/1/1Button" to="." method="_on_1button_pressed"]
-[connection signal="pressed" from="MarginContainer/ColorRect/10/10Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="MarginContainer/ColorRect/5/5Button" to="." method="_on_button5_pressed"]
 [connection signal="pressed" from="MarginContainer/ColorRect/10/10Button" to="." method="_on_10button_pressed"]

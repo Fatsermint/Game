@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://ddw8eu16j846s"]
+[gd_scene load_steps=7 format=3 uid="uid://ddw8eu16j846s"]
 
 [ext_resource type="FontFile" uid="uid://d075w74wmper0" path="res://Godot-Fontpack-d244bf6170b399a6d4d26a0d906058ddf2dafdf1/Godot-Fontpack-d244bf6170b399a6d4d26a0d906058ddf2dafdf1/fonts/pixelFont-7-8x14-sproutLands.ttf" id="1_0fbet"]
 [ext_resource type="Script" uid="uid://diae7ykr3dla2" path="res://control.gd" id="1_qtu10"]
 [ext_resource type="FontFile" uid="uid://bm74bnfe2ya21" path="res://PixelOperator8.ttf" id="2_62e2m"]
+[ext_resource type="Texture2D" uid="uid://wq3gvu0ou5f4" path="res://easy-to-use-icon.png" id="4_ee4bf"]
+[ext_resource type="Texture2D" uid="uid://cuqqwhk8drqpa" path="res://Cursor-Speed-2--Streamline-Ultimate (1).png" id="5_fj5cn"]
+[ext_resource type="Texture2D" uid="uid://b5v2qk473skua" path="res://lightning-png-44039.png" id="5_kbped"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -10,9 +13,9 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 9.0
-offset_top = 107.0
+offset_top = 108.0
 offset_right = 9.0
-offset_bottom = 107.0
+offset_bottom = 108.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_qtu10")
@@ -37,39 +40,53 @@ layout_mode = 0
 offset_left = -542.0
 offset_top = -320.0
 offset_right = -492.0
-offset_bottom = -280.0
+offset_bottom = -270.0
 scale = Vector2(5.5746756, 5.0863023)
 
 [node name="Game1" type="Button" parent="CpsLink"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_62e2m")
-text = "CPS"
+text = "
+"
+
+[node name="Sprite2D" type="Sprite2D" parent="CpsLink"]
+position = Vector2(24.57542, 18.677616)
+scale = Vector2(0.06003487, 0.05628887)
+texture = ExtResource("4_ee4bf")
 
 [node name="RandomGame1" type="MarginContainer" parent="."]
 layout_mode = 0
 offset_left = -156.0
 offset_top = -317.0
 offset_right = -106.0
-offset_bottom = -277.0
+offset_bottom = -267.0
 scale = Vector2(5.5746756, 5.0863023)
 
 [node name="Game2" type="Button" parent="RandomGame1"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_62e2m")
-text = "._."
+
+[node name="Sprite2D" type="Sprite2D" parent="RandomGame1"]
+position = Vector2(24.7548, 18.48101)
+scale = Vector2(0.09369262, 0.104721114)
+texture = ExtResource("5_fj5cn")
 
 [node name="RandomGame2" type="MarginContainer" parent="."]
 layout_mode = 0
 offset_left = 217.0
 offset_top = -317.0
 offset_right = 267.0
-offset_bottom = -277.0
+offset_bottom = -267.0
 scale = Vector2(5.5746756, 5.0863023)
 
 [node name="Game3" type="Button" parent="RandomGame2"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_62e2m")
-text = "._."
+
+[node name="Sprite2D" type="Sprite2D" parent="RandomGame2"]
+position = Vector2(25.651716, 18.284403)
+scale = Vector2(0.007339702, 0.010406486)
+texture = ExtResource("5_kbped")
 
 [node name="MarginContainer3" type="MarginContainer" parent="."]
 layout_mode = 0
@@ -79,9 +96,65 @@ offset_bottom = 40.0
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-6, -106)
 
-[connection signal="pressed" from="CpsLink/Game1" to="." method="_on_game_1_pressed"]
+[node name="Cpstext" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = -540.99994
+offset_top = -159.00003
+offset_right = -438.99994
+offset_bottom = -109.00003
+scale = Vector2(2.72, 1.8400005)
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="Cpstext"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("2_62e2m")
+theme_override_font_sizes/font_size = 16
+text = "Cps test"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Reactiontime" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 216.99998
+offset_top = -157.0
+offset_right = 323.0
+offset_bottom = -107.0
+scale = Vector2(2.5937052, 1.8400005)
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="Reactiontime"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("2_62e2m")
+theme_override_font_sizes/font_size = 16
+text = "Reaction
+ time"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SpeedTest" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = -156.00002
+offset_top = -157.0
+offset_right = -50.0
+offset_bottom = -107.0
+scale = Vector2(2.4715993, 1.8400005)
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="SpeedTest"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("2_62e2m")
+theme_override_font_sizes/font_size = 16
+text = "Mouse
+Accuracy"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="pressed" from="CpsLink/Game1" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="RandomGame1/Game2" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CpsLink/Game1" to="." method="_on_game_1_pressed"]
 [connection signal="pressed" from="RandomGame1/Game2" to="." method="_on_game_2_pressed"]
+[connection signal="pressed" from="RandomGame1/Game2" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="RandomGame2/Game3" to="." method="_on_game_3_pressed"]
 [connection signal="pressed" from="RandomGame2/Game3" to="." method="_on_button_pressed"]

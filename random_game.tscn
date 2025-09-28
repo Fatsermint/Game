@@ -14,6 +14,8 @@ grow_vertical = 2
 script = ExtResource("1_d1yg4")
 
 [node name="BackButton" type="MarginContainer" parent="."]
+show_behind_parent = true
+top_level = true
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0

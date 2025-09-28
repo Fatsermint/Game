@@ -8,11 +8,13 @@ var cpstime = 0
 var tulos = 0
 var menuOpenn = false
 @onready var smalltimer: Timer = $SmallTimer
-@onready var cps: Label = $Cps/Label2
-@onready var headlabel: Label = $Otsikko/Label
+@onready var cps: Label = $Cps3/ColorRect/MarginContainer/Label
+@onready var headlabel: Label = $Time/ColorRect/MarginContainer/Label
+@onready var label: Label = $Clicks/ColorRect/MarginContainer/Label
+
+
 @onready var timer: Timer = $MarginContainer2/Timer
 @onready var button: Button = $MarginContainer2/Button
-@onready var label: Label = $Thing/Label
 @onready var margin_container_2: MarginContainer = $MarginContainer2
 
 
@@ -46,7 +48,7 @@ func _on_button_pressed() -> void:
 		finished = false
 		print(time)
 		smalltimer.start()
-		timer.start()	
+		timer.start()
 	else:
 		if menuOpenn == false:
 			Clicks += 1
@@ -80,31 +82,25 @@ func _on_small_timer_timeout() -> void:
 		tulos = Clicks / cpstime
 		headlabel.text = str(snapped(tulos,0.1))
 		print(tulos)
+		cps.text = str(snapped(timer.time_left, 0.1))
+		
 	
 	
 
-#startbuttons
-func _on_5button_pressed() -> void:
-	time = 5
-	timer.wait_time = 5
-	button.disabled = false
-	startmargincontainer.visible = false
+
+
 	
 func _on_1button_pressed() -> void:
 	time = 1
 	timer.wait_time = 1
 	button.disabled = false
 	startmargincontainer.visible = false
-	
-
 func _on_10button_pressed() -> void:
 	time = 10
 	timer.wait_time = 10
+	print(timer.wait_time)
 	button.disabled = false
 	startmargincontainer.visible = false
-	
-
-
 
 
 func _on_buttona_pressed() -> void:
@@ -113,3 +109,11 @@ func _on_buttona_pressed() -> void:
 
 func _on_back_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://control.tscn")
+
+
+func _on_button5_pressed() -> void:
+	time = 5
+	timer.wait_time = 5
+	button.disabled = false
+	print(timer.wait_time)
+	startmargincontainer.visible = false
